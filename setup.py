@@ -15,7 +15,7 @@ extensions = cythonize([
 
 setup(
     name='mojimoji',
-    version='0.0.2',
+    version='0.0.3',
     description='A lightweight converter between hankaku(half-width) and zenkaku(full-width) characters',
     long_description=open('README.rst').read(),
     author='Studio Ousia',
