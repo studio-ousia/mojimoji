@@ -1,17 +1,13 @@
 # -*- coding: utf-8 -*-
 
-# from distutils.core import setup
 from Cython.Build import cythonize
 from setuptools import setup, Extension
 
-
-extensions = cythonize([
-     Extension(
-        '*', ['*.pyx'],
-        include_dirs=['/usr/include/c++/4.2.1']
-    )
+extensions = cythonize([Extension(
+    '*', ['*.pyx'],
+    include_dirs=['/usr/include/c++/4.2.1'],
+    language="c++")
 ])
-
 
 setup(
     name='mojimoji',
