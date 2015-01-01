@@ -14,7 +14,6 @@ Installation
 
 .. code-block:: bash
 
-    $ pip install Cython
     $ pip install mojimoji
 
 Examples

@@ -1,13 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from Cython.Build import cythonize
 from setuptools import setup, Extension
 
-extensions = cythonize([Extension(
-    '*', ['*.pyx'],
-    include_dirs=['/usr/include/c++/4.2.1'],
-    language="c++")
-])
 
 setup(
     name='mojimoji',
@@ -17,7 +11,7 @@ setup(
     author='Studio Ousia',
     author_email='admin@ousia.jp',
     url='http://github.com/studio-ousia/mojimoji',
-    ext_modules=extensions,
+    ext_modules=[Extension('mojimoji', ['mojimoji.cpp'], language='c++')],
     license=open('LICENSE').read(),
     keywords=['japanese'],
     classifiers=(
