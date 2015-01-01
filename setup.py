@@ -5,7 +5,7 @@ from setuptools import setup, Extension
 
 setup(
     name='mojimoji',
-    version='0.0.3',
+    version='0.0.4',
     description='A lightweight converter between hankaku(half-width) and zenkaku(full-width) characters',
     long_description=open('README.rst').read(),
     author='Studio Ousia',
