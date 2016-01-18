@@ -9,11 +9,11 @@ if sys.platform == 'darwin':
 
 setup(
     name='mojimoji',
-    version='0.0.4',
+    version='0.0.5',
     description='A lightweight converter between hankaku(half-width) and zenkaku(full-width) characters',
     long_description=open('README.rst').read(),
     author='Studio Ousia',
-    author_email='admin@ousia.jp',
+    author_email='ikuya@ousia.jp',
     url='http://github.com/studio-ousia/mojimoji',
     ext_modules=[Extension('mojimoji', ['mojimoji.cpp'], language='c++')],
     license=open('LICENSE').read(),
