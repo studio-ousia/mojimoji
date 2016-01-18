@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 
+import os
+import sys
 from setuptools import setup, Extension
 
+if sys.platform == 'darwin':
+    os.environ['CPPFLAGS'] = '-stdlib=libstdc++'
 
 setup(
     name='mojimoji',
