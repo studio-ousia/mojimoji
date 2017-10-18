@@ -12,6 +12,7 @@ def test_zen_to_han():
     eq_(u'0123', mojimoji.zen_to_han(u'０１２３'))
     eq_(u'abcABC', mojimoji.zen_to_han(u'ａｂｃＡＢＣ'))
     eq_(u'#?!', mojimoji.zen_to_han(u'＃？！'))
+    eq_(u'ア゛イ゛ヴエ゛オ゛', mojimoji.han_to_zen(u'ｱﾞｲﾞｳﾞｴﾞｵﾞ'))
     eq_(u'あいうえお', mojimoji.zen_to_han(u'あいうえお'))
 
 

@@ -2177,7 +2177,7 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
  *         elif digit and digit_hz_table.count(c):
  *             buf[pos] = digit_hz_table[c]             # <<<<<<<<<<<<<<
  * 
- *         elif kana and c == u'' and kana_ten_hz_table.count(c):
+ *         elif kana and c == u'' and kana_ten_hz_table.count(prev):
  */
       (__pyx_v_buf[__pyx_v_pos]) = (__pyx_v_8mojimoji_digit_hz_table[__pyx_v_c]);
 
@@ -2194,7 +2194,7 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
     /* "mojimoji.pyx":171
  *             buf[pos] = digit_hz_table[c]
  * 
- *         elif kana and c == u'' and kana_ten_hz_table.count(c):             # <<<<<<<<<<<<<<
+ *         elif kana and c == u'' and kana_ten_hz_table.count(prev):             # <<<<<<<<<<<<<<
  *             pos -= 1
  *             buf[pos] = kana_ten_hz_table[prev]
  */
@@ -2210,14 +2210,14 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
       __pyx_t_8 = __pyx_t_9;
       goto __pyx_L10_bool_binop_done;
     }
-    __pyx_t_9 = (__pyx_v_8mojimoji_kana_ten_hz_table.count(__pyx_v_c) != 0);
+    __pyx_t_9 = (__pyx_v_8mojimoji_kana_ten_hz_table.count(__pyx_v_prev) != 0);
     __pyx_t_8 = __pyx_t_9;
     __pyx_L10_bool_binop_done:;
     if (__pyx_t_8) {
 
       /* "mojimoji.pyx":172
  * 
- *         elif kana and c == u'' and kana_ten_hz_table.count(c):
+ *         elif kana and c == u'' and kana_ten_hz_table.count(prev):
  *             pos -= 1             # <<<<<<<<<<<<<<
  *             buf[pos] = kana_ten_hz_table[prev]
  * 
@@ -2225,18 +2225,18 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
       __pyx_v_pos = (__pyx_v_pos - 1);
 
       /* "mojimoji.pyx":173
- *         elif kana and c == u'' and kana_ten_hz_table.count(c):
+ *         elif kana and c == u'' and kana_ten_hz_table.count(prev):
  *             pos -= 1
  *             buf[pos] = kana_ten_hz_table[prev]             # <<<<<<<<<<<<<<
  * 
- *         elif kana and c == u'' and kana_maru_hz_table.count(c):
+ *         elif kana and c == u'' and kana_maru_hz_table.count(prev):
  */
       (__pyx_v_buf[__pyx_v_pos]) = (__pyx_v_8mojimoji_kana_ten_hz_table[__pyx_v_prev]);
 
       /* "mojimoji.pyx":171
  *             buf[pos] = digit_hz_table[c]
  * 
- *         elif kana and c == u'' and kana_ten_hz_table.count(c):             # <<<<<<<<<<<<<<
+ *         elif kana and c == u'' and kana_ten_hz_table.count(prev):             # <<<<<<<<<<<<<<
  *             pos -= 1
  *             buf[pos] = kana_ten_hz_table[prev]
  */
@@ -2246,7 +2246,7 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
     /* "mojimoji.pyx":175
  *             buf[pos] = kana_ten_hz_table[prev]
  * 
- *         elif kana and c == u'' and kana_maru_hz_table.count(c):             # <<<<<<<<<<<<<<
+ *         elif kana and c == u'' and kana_maru_hz_table.count(prev):             # <<<<<<<<<<<<<<
  *             pos -= 1
  *             buf[pos] = kana_maru_hz_table[prev]
  */
@@ -2262,14 +2262,14 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
       __pyx_t_8 = __pyx_t_9;
       goto __pyx_L13_bool_binop_done;
     }
-    __pyx_t_9 = (__pyx_v_8mojimoji_kana_maru_hz_table.count(__pyx_v_c) != 0);
+    __pyx_t_9 = (__pyx_v_8mojimoji_kana_maru_hz_table.count(__pyx_v_prev) != 0);
     __pyx_t_8 = __pyx_t_9;
     __pyx_L13_bool_binop_done:;
     if (__pyx_t_8) {
 
       /* "mojimoji.pyx":176
  * 
- *         elif kana and c == u'' and kana_maru_hz_table.count(c):
+ *         elif kana and c == u'' and kana_maru_hz_table.count(prev):
  *             pos -= 1             # <<<<<<<<<<<<<<
  *             buf[pos] = kana_maru_hz_table[prev]
  * 
@@ -2277,7 +2277,7 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
       __pyx_v_pos = (__pyx_v_pos - 1);
 
       /* "mojimoji.pyx":177
- *         elif kana and c == u'' and kana_maru_hz_table.count(c):
+ *         elif kana and c == u'' and kana_maru_hz_table.count(prev):
  *             pos -= 1
  *             buf[pos] = kana_maru_hz_table[prev]             # <<<<<<<<<<<<<<
  * 
@@ -2288,7 +2288,7 @@ static PyObject *__pyx_f_8mojimoji_han_to_zen(PyObject *__pyx_v_text, CYTHON_UNU
       /* "mojimoji.pyx":175
  *             buf[pos] = kana_ten_hz_table[prev]
  * 
- *         elif kana and c == u'' and kana_maru_hz_table.count(c):             # <<<<<<<<<<<<<<
+ *         elif kana and c == u'' and kana_maru_hz_table.count(prev):             # <<<<<<<<<<<<<<
  *             pos -= 1
  *             buf[pos] = kana_maru_hz_table[prev]
  */
