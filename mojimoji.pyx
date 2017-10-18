@@ -168,11 +168,11 @@ cpdef unicode han_to_zen(unicode text, bint ascii=True, bint digit=True,
         elif digit and digit_hz_table.count(c):
             buf[pos] = digit_hz_table[c]
 
-        elif kana and c == u'ﾞ':
+        elif kana and c == u'ﾞ' and kana_ten_hz_table.count(c):
             pos -= 1
             buf[pos] = kana_ten_hz_table[prev]
 
-        elif kana and c == u'ﾟ':
+        elif kana and c == u'ﾟ' and kana_maru_hz_table.count(c):
             pos -= 1
             buf[pos] = kana_maru_hz_table[prev]
 
