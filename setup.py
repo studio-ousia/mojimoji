@@ -18,7 +18,7 @@ setup(
     ext_modules=[Extension('mojimoji', ['mojimoji.cpp'], language='c++')],
     license=open('LICENSE').read(),
     keywords=['japanese'],
-    classifiers=(
+    classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Natural Language :: Japanese',
@@ -26,5 +26,5 @@ setup(
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
-    )
+    ]
 )
