@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import io
 import os
 import sys
 from setuptools import setup, Extension
@@ -11,7 +12,7 @@ setup(
     name='mojimoji',
     version='0.0.6',
     description='A lightweight converter between hankaku(half-width) and zenkaku(full-width) characters',
-    long_description=open('README.rst').read(),
+    long_description=io.open('README.rst', encoding='utf-8').read(),
     author='Studio Ousia',
     author_email='ikuya@ousia.jp',
     url='http://github.com/studio-ousia/mojimoji',
