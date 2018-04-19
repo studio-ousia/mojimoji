@@ -10,8 +10,8 @@ if sys.platform == 'darwin':
 
 setup(
     name='mojimoji',
-    version='0.0.7',
-    description='A lightweight converter between hankaku(half-width) and zenkaku(full-width) characters',
+    version='0.0.8',
+    description='A fast converter between Japanese hankaku and zenkaku characters',
     long_description=io.open('README.rst', encoding='utf-8').read(),
     author='Studio Ousia',
     author_email='ikuya@ousia.jp',

@@ -7,7 +7,7 @@ mojimoji
 .. image:: https://travis-ci.org/studio-ousia/mojimoji.png?branch=master
     :target: https://travis-ci.org/studio-ousia/mojimoji
 
-A lightweight converter between hankaku(half-width) and zenkaku(full-width) characters.
+A fast converter between Japanese hankaku and zenkaku characters.
 
 Installation
 ------------
