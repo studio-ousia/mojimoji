@@ -22,7 +22,6 @@ setup(
     url='http://github.com/studio-ousia/mojimoji',
     ext_modules=[Extension('mojimoji', ['mojimoji.cpp'], language='c++',
                            extra_compile_args=compile_args, extra_link_args=link_args)],
-    license=open('LICENSE').read(),
     keywords=['japanese'],
     classifiers=[
         'Development Status :: 4 - Beta',
