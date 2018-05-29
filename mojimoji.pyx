@@ -2,11 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from libc.stdlib cimport malloc, free
-
-cdef extern from "<tr1/unordered_map>" namespace "std::tr1":
-    cdef cppclass unordered_map[T, U]:
-        U& operator[](T&) nogil
-        size_t count(T&) nogil
+from libcpp.unordered_map cimport unordered_map
 
 ctypedef unordered_map[Py_UNICODE, Py_UNICODE] table_type
 

@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
 
 import io
-import os
 import sys
 from setuptools import setup, Extension
 
-if sys.platform == 'darwin':
-    os.environ['CPPFLAGS'] = '-stdlib=libstdc++'
+if sys.platform.startswith('win'):
+    compile_args = []
+    link_args = []
+else:
+    compile_args = ['-std=c++11']
+    link_args = ['-std=c++11']
+
 
 setup(
     name='mojimoji',
@@ -16,7 +20,8 @@ setup(
     author='Studio Ousia',
     author_email='ikuya@ousia.jp',
     url='http://github.com/studio-ousia/mojimoji',
-    ext_modules=[Extension('mojimoji', ['mojimoji.cpp'], language='c++')],
+    ext_modules=[Extension('mojimoji', ['mojimoji.cpp'], language='c++',
+                           extra_compile_args=compile_args, extra_link_args=link_args)],
     license=open('LICENSE').read(),
     keywords=['japanese'],
     classifiers=[
