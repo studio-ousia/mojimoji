@@ -24,5 +24,5 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
     ],
-    install_requires=["cython"],
+    install_requires=["Cython"],
 )
