@@ -1,39 +1,27 @@
-# -*- coding: utf-8 -*-
-
 import io
-import sys
-from setuptools import setup, Extension
-
-if sys.platform.startswith('win'):
-    compile_args = []
-    link_args = []
-else:
-    compile_args = ['-std=c++11']
-    link_args = ['-std=c++11']
-
+from setuptools import setup
+from distutils.core import setup
+from Cython.Build import cythonize
 
 setup(
-    name='mojimoji',
-    version='0.0.9',
-    description='A fast converter between Japanese hankaku and zenkaku characters',
-    long_description=io.open('README.rst', encoding='utf-8').read(),
-    author='Studio Ousia',
-    author_email='ikuya@ousia.jp',
-    url='http://github.com/studio-ousia/mojimoji',
-    ext_modules=[Extension('mojimoji', ['mojimoji.cpp'], language='c++',
-                           extra_compile_args=compile_args, extra_link_args=link_args)],
-    keywords=['japanese'],
+    name="mojimoji2",
+    version="0.1.0",
+    description="A fast converter between Japanese hankaku and zenkaku characters",
+    long_description=io.open("README.rst", encoding="utf-8").read(),
+    author="tamuhey",
+    author_email="tamuhey@gmail.com",
+    ext_modules=cythonize("mojimoji.pyx"),
+    url="http://github.com/tamuhey/mojimoji",
+    keywords=["japanese"],
     classifiers=[
-        'Development Status :: 4 - Beta',
-        'Intended Audience :: Developers',
-        'Natural Language :: Japanese',
-        'License :: OSI Approved :: Apache Software License',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-    ]
+        "Development Status :: 4 - Beta",
+        "Intended Audience :: Developers",
+        "Natural Language :: Japanese",
+        "License :: OSI Approved :: Apache Software License",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+    ],
 )
