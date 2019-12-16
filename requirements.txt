@@ -1,2 +1,2 @@
-Cython=="*"
-nose=="*"
+Cython
+nose
