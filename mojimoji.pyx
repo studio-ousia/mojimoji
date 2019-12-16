@@ -1,3 +1,5 @@
+# distutils: language=c++
+
 from libc.stdlib cimport malloc, free
 from libcpp.unordered_map cimport unordered_map
 
