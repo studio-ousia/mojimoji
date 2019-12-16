@@ -3,7 +3,7 @@
 from libc.stdlib cimport malloc, free
 from libcpp.unordered_map cimport unordered_map
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 ctypedef unordered_map[Py_UNICODE, Py_UNICODE] table_type
 
 
