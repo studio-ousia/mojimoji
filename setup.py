@@ -5,7 +5,6 @@ from Cython.Build import cythonize
 
 setup(
     name="mojimoji2",
-    version="0.1.0",
     description="A fast converter between Japanese hankaku and zenkaku characters",
     long_description=io.open("README.rst", encoding="utf-8").read(),
     author="tamuhey",
