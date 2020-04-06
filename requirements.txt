@@ -1,2 +1,6 @@
 Cython
 nose
+python
+wheel
+twine
+auditwheel

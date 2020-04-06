@@ -1,12 +1,10 @@
-import io
 from setuptools import setup
-from distutils.core import setup
 from Cython.Build import cythonize
 
 setup(
     name="mojimoji2",
     description="A fast converter between Japanese hankaku and zenkaku characters",
-    long_description=io.open("README.rst", encoding="utf-8").read(),
+    long_description=open("README.rst").read(),
     author="tamuhey",
     author_email="tamuhey@gmail.com",
     ext_modules=cythonize("mojimoji.pyx"),
