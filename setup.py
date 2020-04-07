@@ -23,7 +23,7 @@ extensions = [
 
 setup(
     name="mojimoji",
-    version="0.0.9",
+    version="0.0.10",
     description="A fast converter between Japanese hankaku and zenkaku characters",
     long_description=io.open("README.rst", encoding="utf-8").read(),
     author="Studio Ousia",
