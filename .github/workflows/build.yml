@@ -1,4 +1,4 @@
-name: Python application
+name: build macos and win
 
 on: [push]
 
