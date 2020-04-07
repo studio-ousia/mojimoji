@@ -35,7 +35,8 @@ jobs:
 
     - name: Build
       if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/')
-      run: python setup.py bdist_wheel
+      run: |
+        python setup.py bdist_wheel
         find dist/ -type f -name "*whl" -exec $PYTHON -m auditwheel repair {} \;
 
     - name: Publish test pypi
