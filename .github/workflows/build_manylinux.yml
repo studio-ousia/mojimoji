@@ -26,16 +26,16 @@ jobs:
     - name: Install dependencies
       run: |
         $PYTHON -m pip install --upgrade pip
-        pip install -r requirements.txt
-        pip install -e .
+        $PYTHON -m pip install -r requirements.txt
+        $PYTHON -m pip install -e .
 
     - name: run test
       run: pytest
 
     - name: Build
       run: |
-        python setup.py bdist_wheel
-        find dist/ -type f -name "*whl" -exec $PYTHON -m auditwheel repair {} \;
+        $PYTHON setup.py bdist_wheel
+        $PYTHON -m auditwheel repair dist/*whl
 
     - name: Publish pypi
       if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/')
