@@ -35,7 +35,7 @@ jobs:
 
     - name: Build sdist
       if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/') && ${{ matrix.os }} == 'macOS-latest' && ${{ matrix.python-version }} == '3.7'
-      run: python setup.py bdist_wheel
+      run: python setup.py sdist
 
     - name: Publish test pypi
       if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/')
