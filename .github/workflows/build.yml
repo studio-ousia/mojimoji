@@ -30,11 +30,10 @@ jobs:
       run: pytest
 
     - name: Build
-      if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/')
       run: python setup.py bdist_wheel
 
     - name: Build sdist
-      if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/') && ${{ matrix.os }} == 'macOS-latest' && ${{ matrix.python-version }} == '3.7'
+      if: matrix.os == 'macOS-latest' && matrix.python-version == '3.7'
       run: python setup.py sdist
 
     - name: Publish pypi
