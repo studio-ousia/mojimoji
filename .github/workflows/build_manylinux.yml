@@ -38,11 +38,6 @@ jobs:
         python setup.py bdist_wheel
         find dist/ -type f -name "*whl" -exec $PYTHON -m auditwheel repair {} \;
 
-    - name: Publish test pypi
-      if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/')
-      run: |
-        twine upload dist/*whl --repository-url https://test.pypi.org/legacy/ -u ${{ secrets.TEST_PYPI_USER }} -p ${{ secrets.TEST_PYPI_PASS }}
-
     - name: Publish pypi
       if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/')
       run: |

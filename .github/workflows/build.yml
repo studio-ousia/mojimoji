@@ -37,11 +37,6 @@ jobs:
       if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/') && ${{ matrix.os }} == 'macOS-latest' && ${{ matrix.python-version }} == '3.7'
       run: python setup.py sdist
 
-    - name: Publish test pypi
-      if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/')
-      run: |
-        twine upload dist/* --repository-url https://test.pypi.org/legacy/ -u ${{ secrets.TEST_PYPI_USER }} -p ${{ secrets.TEST_PYPI_PASS }}
-
     - name: Publish pypi
       if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/')
       run: |
