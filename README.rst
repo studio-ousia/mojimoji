@@ -4,8 +4,11 @@ mojimoji
 .. image:: https://badge.fury.io/py/mojimoji.png
     :target: http://badge.fury.io/py/mojimoji
 
-.. image:: https://travis-ci.org/studio-ousia/mojimoji.png?branch=master
-    :target: https://travis-ci.org/studio-ousia/mojimoji
+.. image:: https://github.com/studio-ousia/mojimoji/workflows/build%20manylinux/badge.svg
+    :target: https://github.com/studio-ousia/mojimoji/actions
+
+.. image:: https://github.com/studio-ousia/mojimoji/workflows/build%20macos%20and%20win/badge.svg
+    :target: https://github.com/studio-ousia/mojimoji/actions
 
 A fast converter between Japanese hankaku and zenkaku characters.
 
