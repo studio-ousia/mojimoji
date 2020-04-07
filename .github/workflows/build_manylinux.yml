@@ -41,5 +41,5 @@ jobs:
     - name: Publish pypi
       if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags/')
       run: |
-        twine upload dist/*whl -u ${{ secrets.PYPI_USER }} -p ${{ secrets.PYPI_PASS }}
+        twine upload wheelhouse/*whl -u ${{ secrets.PYPI_USER }} -p ${{ secrets.PYPI_PASS }}
 
