@@ -1,5 +1,2 @@
 [build-system]
 requires = ["setuptools", "wheel", "Cython"]
-
-[dev-dependencies]
-nose = "*"
