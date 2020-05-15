@@ -26,6 +26,9 @@ jobs:
         pip install -r requirements.txt
         pip install -e .
 
+    - name: run mypy
+      run: mypy test_mojimoji.py
+
     - name: run test
       run: pytest
 

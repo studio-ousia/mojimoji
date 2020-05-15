@@ -31,5 +31,5 @@ def test_zen_to_han(expected: str, text: str):
         ("あいうえお", "あいうえお"),
     ],
 )
-def test_han_to_zen(expected, text):
+def test_han_to_zen(expected: str, text: str):
     assert mojimoji.han_to_zen(text) == expected
