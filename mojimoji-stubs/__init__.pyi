@@ -1,0 +1,6 @@
+def han_to_zen(
+    text: str, ascii: bool = True, digit: bool = True, kana: bool = True
+) -> str: ...
+def zen_to_han(
+    text: str, ascii: bool = True, digit: bool = True, kana: bool = True
+) -> str: ...
