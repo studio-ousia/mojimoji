@@ -30,7 +30,8 @@ setup(
     author_email="ikuya@ousia.jp",
     url="http://github.com/studio-ousia/mojimoji",
     ext_modules=cythonize(extensions),
-    packages=["mojimoji-stubs"],
+    packages=["mojimoji"],
+    package_data={"mojimoji":["py.typed","__init__.pyi"]},
     keywords=["japanese"],
     classifiers=[
         "Development Status :: 4 - Beta",
