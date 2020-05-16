@@ -2,7 +2,7 @@
 
 import io
 import sys
-from setuptools import setup, Extension, find_packages
+from setuptools import setup, Extension
 from Cython.Build import cythonize
 
 if sys.platform.startswith("win"):
