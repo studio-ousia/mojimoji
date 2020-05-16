@@ -2,7 +2,7 @@
 
 import io
 import sys
-from setuptools import setup, Extension
+from setuptools import setup, Extension, find_packages
 from Cython.Build import cythonize
 
 if sys.platform.startswith("win"):
@@ -30,7 +30,8 @@ setup(
     author_email="ikuya@ousia.jp",
     url="http://github.com/studio-ousia/mojimoji",
     ext_modules=cythonize(extensions),
-    packages=["mojimoji-stubs"],
+    packages=["mojimoji"],
+    package_data={"mojimoji":["py.typed","__init__.pyi"]},
     keywords=["japanese"],
     classifiers=[
         "Development Status :: 4 - Beta",
