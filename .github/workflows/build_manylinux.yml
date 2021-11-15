@@ -31,7 +31,7 @@ jobs:
         $PYTHON -m pip install -e .
 
     - name: run test
-      run: pytest
+      run: $PYTHON -m pytest
 
     - name: Build
       run: |
