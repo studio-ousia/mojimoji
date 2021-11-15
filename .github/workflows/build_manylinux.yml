@@ -12,6 +12,7 @@ jobs:
           - 3.6
           - 3.7
           - 3.8
+          - 3.9
     container: 
       image: quay.io/pypa/manylinux2014_x86_64
       env:
