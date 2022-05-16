@@ -4,12 +4,6 @@ mojimoji
 .. image:: https://badge.fury.io/py/mojimoji.png
     :target: http://badge.fury.io/py/mojimoji
 
-.. image:: https://github.com/studio-ousia/mojimoji/workflows/build%20manylinux/badge.svg
-    :target: https://github.com/studio-ousia/mojimoji/actions
-
-.. image:: https://github.com/studio-ousia/mojimoji/workflows/build%20macos%20and%20win/badge.svg
-    :target: https://github.com/studio-ousia/mojimoji/actions
-
 A fast converter between Japanese hankaku and zenkaku characters.
 
 Installation
@@ -81,3 +75,7 @@ Results
     In [22]: %time for n in range(1000000): zenhan.z2h(s)
     CPU times: user 69.18 s, sys: 0.11 s, total: 69.29 s
     Wall time: 69.48 s
+
+Links
+-----
+- `mojimoji-rs <https://github.com/europeanplaice/mojimoji-rs>`_: The Rust implementation of mojimoji
