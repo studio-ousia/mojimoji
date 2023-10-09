@@ -4,7 +4,10 @@
 from libc.stdlib cimport malloc, free
 from libcpp.unordered_map cimport unordered_map
 
-ctypedef unordered_map[Py_UNICODE, Py_UNICODE] table_type
+ctypedef unordered_map[Py_UCS4, Py_UCS4] table_type
+
+cdef extern from "Python.h":
+    object PyUnicode_DecodeUTF32(const char *s, Py_ssize_t size, const char *errors, int *byteorder)
 
 
 ASCII_ZENKAKU_CHARS = (
@@ -107,12 +110,15 @@ del ASCII_HANKAKU_CHARS, ASCII_ZENKAKU_CHARS,\
     KANA_TEN_MAP, KANA_MARU_MAP
 
 
+cdef py_ucs4_to_unicode(Py_UCS4 *ucs4_ptr, Py_ssize_t length):
+    return PyUnicode_DecodeUTF32(<char*>ucs4_ptr, sizeof(Py_UCS4)*length, NULL, NULL)
+
 cpdef unicode zen_to_han(unicode text, bint ascii=True, bint digit=True,
                          bint kana=True):
 
-    cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) * 2 + 1))
+    cdef Py_UCS4 *buf = <Py_UCS4 *>malloc(sizeof(Py_UCS4) * (len(text) * 2 + 1))
 
-    cdef Py_UNICODE c
+    cdef Py_UCS4 c
     cdef int pos = 0
 
     for c in text:
@@ -142,7 +148,7 @@ cpdef unicode zen_to_han(unicode text, bint ascii=True, bint digit=True,
 
     buf[pos] = u'\0'
 
-    cdef unicode ret = buf
+    cdef unicode ret = py_ucs4_to_unicode(buf, pos)
 
     free(buf)
 
@@ -152,9 +158,9 @@ cpdef unicode zen_to_han(unicode text, bint ascii=True, bint digit=True,
 cpdef unicode han_to_zen(unicode text, bint ascii=True, bint digit=True,
                          bint kana=True):
 
-    cdef Py_UNICODE *buf = <Py_UNICODE *>malloc(sizeof(Py_UNICODE) * (len(text) + 1))
+    cdef Py_UCS4 *buf = <Py_UCS4 *>malloc(sizeof(Py_UCS4) * (len(text) + 1))
 
-    cdef Py_UNICODE c, prev
+    cdef Py_UCS4 c, prev
     cdef int pos = 0
 
     for c in text:
@@ -183,7 +189,7 @@ cpdef unicode han_to_zen(unicode text, bint ascii=True, bint digit=True,
 
     buf[pos] = u'\0'
 
-    cdef unicode ret = buf
+    cdef unicode ret = py_ucs4_to_unicode(buf, pos)
 
     free(buf)
 
