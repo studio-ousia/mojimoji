@@ -1,10 +1,17 @@
 mojimoji
 ========
 
-.. image:: https://badge.fury.io/py/mojimoji.png
-    :target: http://badge.fury.io/py/mojimoji
+.. image:: https://github.com/studio-ousia/mojimoji/actions/workflows/test.yml/badge.svg
+    :target: https://github.com/studio-ousia/mojimoji/actions/workflows/test.yml
 
-A fast converter between Japanese hankaku and zenkaku characters.
+.. image:: https://img.shields.io/pypi/v/mojimoji.svg?style=flat-square&logo=pypi&logoColor=white
+    :target: https://pypi.org/project/mojimoji/
+
+.. image:: https://static.pepy.tech/personalized-badge/mojimoji?period=total&units=international_system&left_color=grey&right_color=orange&left_text=pip%20downloads
+    :target: https://pypi.org/project/mojimoji/
+
+
+A Cython-based fast converter between Japanese hankaku and zenkaku characters.
 
 Installation
 ------------
