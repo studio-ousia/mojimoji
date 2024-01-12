@@ -86,3 +86,4 @@ Results
 Links
 -----
 - `mojimoji-rs <https://github.com/europeanplaice/mojimoji-rs>`_: The Rust implementation of mojimoji
+- `gomojimoji <https://github.com/rusq/gomojimoji>`_: The Go implementation of mojimoji
