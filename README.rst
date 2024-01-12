@@ -4,7 +4,7 @@ mojimoji
 .. image:: https://github.com/studio-ousia/mojimoji/actions/workflows/test.yml/badge.svg
     :target: https://github.com/studio-ousia/mojimoji/actions/workflows/test.yml
 
-.. image:: https://img.shields.io/pypi/v/mojimoji.svg?style=flat-square&logo=pypi&logoColor=white
+.. image:: https://img.shields.io/pypi/v/mojimoji.svg
     :target: https://pypi.org/project/mojimoji/
 
 .. image:: https://static.pepy.tech/personalized-badge/mojimoji?period=total&units=international_system&left_color=grey&right_color=orange&left_text=pip%20downloads
@@ -29,13 +29,13 @@ Zenkaku to Hankaku
 .. code-block:: python
 
     >>> import mojimoji
-    >>> print mojimoji.zen_to_han(u'アイウａｂｃ０１２')
+    >>> print(mojimoji.zen_to_han('アイウａｂｃ０１２'))
     ｱｲｳabc012
-    >>> print mojimoji.zen_to_han(u'アイウａｂｃ０１２', kana=False)
+    >>> print(mojimoji.zen_to_han('アイウａｂｃ０１２', kana=False))
     アイウabc012
-    >>> print mojimoji.zen_to_han(u'アイウａｂｃ０１２', digit=False)
+    >>> print(mojimoji.zen_to_han('アイウａｂｃ０１２', digit=False))
     ｱｲｳabc０１２
-    >>> print mojimoji.zen_to_han(u'アイウａｂｃ０１２', ascii=False)
+    >>> print(mojimoji.zen_to_han('アイウａｂｃ０１２', ascii=False))
     ｱｲｳａｂｃ012
 
 Hankaku to Zenkaku
@@ -44,13 +44,13 @@ Hankaku to Zenkaku
 .. code-block:: python
 
     >>> import mojimoji
-    >>> print mojimoji.han_to_zen(u'ｱｲｳabc012')
+    >>> print(mojimoji.han_to_zen('ｱｲｳabc012'))
     アイウａｂｃ０１２
-    >>> print mojimoji.han_to_zen(u'ｱｲｳabc012', kana=False)
+    >>> print(mojimoji.han_to_zen('ｱｲｳabc012', kana=False))
     ｱｲｳａｂｃ０１２
-    >>> print mojimoji.han_to_zen(u'ｱｲｳabc012', digit=False)
+    >>> print(mojimoji.han_to_zen('ｱｲｳabc012', digit=False))
     アイウａｂｃ012
-    >>> print mojimoji.han_to_zen(u'ｱｲｳabc012', ascii=False)
+    >>> print(mojimoji.han_to_zen('ｱｲｳabc012', ascii=False))
     アイウabc０１２
 
 
@@ -69,7 +69,7 @@ Results
 
 .. code-block:: python
 
-    In [19]: s = u'ＡＢＣＤＥＦＧ０１２３４５' * 10
+    In [19]: s = 'ＡＢＣＤＥＦＧ０１２３４５' * 10
 
     In [20]: %time for n in range(1000000): mojimoji.zen_to_han(s)
     CPU times: user 2.86 s, sys: 0.10 s, total: 2.97 s
