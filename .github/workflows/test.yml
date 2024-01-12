@@ -9,7 +9,7 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
-        python_version: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+        python_version: ["3.7", "3.8", "3.9", "3.10", "3.11", "3.12"]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -31,11 +31,11 @@ jobs:
       - name: Run tests
         run: |
           pip install pytest
-          pytest test_mojimoji.py --junitxml=junit/test-results-${{ matrix.python-version }}.xml
+          pytest test_mojimoji.py --junitxml=junit/test-results-${{ matrix.python_version }}.xml
 
       - name: Upload pytest test results
         uses: actions/upload-artifact@v3
         with:
-          name: pytest-results-${{ matrix.python-version }}
-          path: junit/test-results-${{ matrix.python-version }}.xml
+          name: pytest-results-${{ matrix.python_version }}
+          path: junit/test-results-${{ matrix.python_version }}.xml
         if: ${{ always() }}
