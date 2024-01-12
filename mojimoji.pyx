@@ -430,6 +430,7 @@ def zen_to_han(text: str, ascii: cython.bint = True, digit: cython.bint = True, 
 def han_to_zen(text: str, ascii: cython.bint = True, digit: cython.bint = True, kana: cython.bint = True):
     buf = cython.cast(cython.p_Py_UCS4, malloc(cython.sizeof(cython.Py_UCS4) * len(text)))
     pos = 0
+    prev = " "
 
     for c in text:
         if ascii and ascii_hz_table.count(c):
