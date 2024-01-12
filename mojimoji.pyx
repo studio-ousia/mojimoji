@@ -93,6 +93,7 @@ _ASCII_ZENKAKU_CHARS = (
     "｝",
     "～",
     "　",
+    "＼",
 )
 
 _ASCII_HANKAKU_CHARS = (
@@ -181,6 +182,7 @@ _ASCII_HANKAKU_CHARS = (
     "}",
     "~",
     " ",
+    "\\",
 )
 
 _KANA_ZENKAKU_CHARS = (
