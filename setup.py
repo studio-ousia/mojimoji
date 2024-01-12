@@ -1,9 +1,5 @@
-# -*- coding: utf-8 -*-
-
-import io
 import sys
 from setuptools import setup, Extension
-from Cython.Build import cythonize
 
 if sys.platform.startswith("win"):
     compile_args = []
@@ -21,28 +17,4 @@ extensions = [
     )
 ]
 
-setup(
-    name="mojimoji",
-    version="0.0.12",
-    description="A fast converter between Japanese hankaku and zenkaku characters",
-    long_description=io.open("README.rst", encoding="utf-8").read(),
-    author="Studio Ousia",
-    author_email="ikuya@ousia.jp",
-    url="http://github.com/studio-ousia/mojimoji",
-    ext_modules=cythonize(extensions),
-    packages=["mojimoji"],
-    package_data={"mojimoji":["py.typed","__init__.pyi"]},
-    keywords=["japanese"],
-    classifiers=[
-        "Development Status :: 4 - Beta",
-        "Intended Audience :: Developers",
-        "Natural Language :: Japanese",
-        "License :: OSI Approved :: Apache Software License",
-        "Programming Language :: Python",
-        "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.5",
-        "Programming Language :: Python :: 3.6",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-    ],
-)
+setup(name="mojimoji", ext_modules=extensions, setup_requires=["wheel", "Cython"])
